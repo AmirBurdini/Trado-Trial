@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Opening from './assets/pages/Opening';
+import Images from './assets/pages/Images';
+import About from './assets/pages/About';
+
+const {BrowserRouter :Router, Switch, Route} = require('react-router-dom')
+
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Router>
+        <Switch >
+            <Route path = "/opening">
+                <Opening />
+            </Route>
+            <Route path = "/images">
+                <Images />
+            </Route>
+            <Route default path = "/">
+                <About />
+            </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
