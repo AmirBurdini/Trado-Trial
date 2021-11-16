@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 
-import Opening from './assets/pages/Opening';
-import Images from './assets/pages/Images';
-import About from './assets/pages/About';
+import OpeningTimePage from './assets/pages/Opening';
+import ImagesPage from './assets/pages/Images';
+import AboutPage from './assets/pages/About';
 
-const {BrowserRouter :Router, Switch, Route} = require('react-router-dom')
+import {BrowserRouter as Router, Routes as Switch, Route}  from 'react-router-dom'
 
 function App() {
 
@@ -13,15 +13,15 @@ function App() {
     <div className="App">
       
       <Router>
-        <Switch >
-            <Route path = "/opening">
-                <Opening />
+        <Switch>
+            <Route path = "/opening" element = { <h1>openings</h1>}>
+               
             </Route>
-            <Route path = "/images">
-                <Images />
+            <Route path = "/images"  element = { <h1>images</h1>}>
+                
             </Route>
-            <Route default path = "/">
-                <About />
+            <Route path = "/" element = { <h1>about</h1>}>
+                
             </Route>
         </Switch>
       </Router>

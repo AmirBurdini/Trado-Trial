@@ -6,7 +6,7 @@ interface Props {
     name : string; 
 }
 
-const TextInput : FC<Props> = (props) : JSX.Element => {
+const Form : FC<Props> = (props) : JSX.Element => {
 
     const [content, setContent] = useState(props.content)
 
@@ -20,4 +20,4 @@ const TextInput : FC<Props> = (props) : JSX.Element => {
     return (<input type = "text" placeholder = {props.name} onChange = {(e) => saveContent(e.target.value)}/>)
 }
 
-export default connect()(TextInput)
+export default connect()(Form)
