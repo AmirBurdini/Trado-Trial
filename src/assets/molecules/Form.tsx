@@ -1,23 +1,14 @@
-import React, { FC, useState } from 'react'
+import React, {FC} from 'react'
 import {connect} from 'react-redux'
+import TextInput from '../atoms/TextInput'
 
-interface Props {
-    content : string;
-    name : string; 
-}
+const Form : FC = () : JSX.Element => {
 
-const Form : FC<Props> = (props) : JSX.Element => {
-
-    const [content, setContent] = useState(props.content)
-
-    const saveContent = (value : string) => {
-
-        setContent(value)
-        
-
-    }
-
-    return (<input type = "text" placeholder = {props.name} onChange = {(e) => saveContent(e.target.value)}/>)
+    return (<div>
+        <TextInput content = {''} name = {"NAME"}/> <br/> <hr />
+        <TextInput content = {''} name = {"DESCRIPTION"}/> <br/> <hr />
+        <TextInput content = {''} name = {"URL"}/> <br/> <hr />
+    </div>)
 }
 
 export default connect()(Form)
