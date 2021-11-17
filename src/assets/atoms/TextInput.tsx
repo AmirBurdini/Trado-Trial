@@ -17,7 +17,7 @@ const TextInput : FC<Props> = (props) : JSX.Element => {
         dispatch({type: `EDIT_${props.name}`, payload : value})
     }
 
-    return (<input type = "text" placeholder = {props.name} onChange = {(e) => saveContent(e.target.value)}/>)
+    return (<input type = "text" defaultValue = {content} placeholder = {props.name} onChange = {(e) => saveContent(e.target.value)}/>)
 }
 
 export default connect()(TextInput)

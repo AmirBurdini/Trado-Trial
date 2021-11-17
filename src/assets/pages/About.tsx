@@ -8,7 +8,11 @@ const About = () => {
 
         <h1>About</h1>
         <Form />
-        <Liveview />
+
+        <div>
+          <Liveview />
+        </div>
+
     </div>)
 }
 

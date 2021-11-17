@@ -13,6 +13,8 @@ const appStore = createStore(appReducer);
 export type RootState = ReturnType<typeof appStore.getState>
 export type AppDispatch = typeof appStore.dispatch
 
+require('dotenv').config()
+
 ReactDOM.render(
   <Provider store={appStore} >
     <App />
