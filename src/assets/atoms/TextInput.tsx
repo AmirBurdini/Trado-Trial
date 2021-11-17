@@ -14,7 +14,7 @@ const TextInput : FC<Props> = (props) : JSX.Element => {
     const saveContent = (value : string) => {
 
         setContent(value)
-        dispatch({type: `EDIT_${props.name}`, payload : content})
+        dispatch({type: `EDIT_${props.name}`, payload : value})
     }
 
     return (<input type = "text" placeholder = {props.name} onChange = {(e) => saveContent(e.target.value)}/>)

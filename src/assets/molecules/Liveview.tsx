@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 import {connect, useSelector} from 'react-redux'
+import { Link } from 'react-router-dom'
 
 interface RootState {
     name : string;
@@ -9,15 +10,16 @@ interface RootState {
 
 const Liveview : FC = () : JSX.Element => {
 
-    let name : String = useSelector((state : RootState) => state.name)
-    let description : String = useSelector((state : RootState) => state.description)
-    let url : String = useSelector((state : RootState) => state.url)
+    let name : string = useSelector((state : RootState) => state.name)
+    let description : string = useSelector((state : RootState) => state.description)
+    let url : string = useSelector((state : RootState) => state.url)
 
     return (<div>
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <a>{url}</a>
-
+        <h1>{name}</h1> <br />
+        <div>
+            <p>{description}</p> <br />
+            <Link to = {url}>{url}</Link> <br />
+        </div>        
     </div>)
 }
 

@@ -18,7 +18,7 @@ const appReducer = (state = {name : '', description : '', url : '', images : [],
 
           let new_url = action.payload;
 
-         return {...state, description : new_url}
+         return {...state, url : new_url}
 
 
         default:
