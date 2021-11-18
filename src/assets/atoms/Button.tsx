@@ -8,7 +8,7 @@ interface Props {
 
 const Button : FC<Props> = (props) : JSX.Element => {
 
-    return (<button onClick = {props.fetch}>{props.name}</button>)
+    return (<button className = "button-input" onClick = {props.fetch}>{props.name}</button>)
 }
 
 export default connect()(Button)

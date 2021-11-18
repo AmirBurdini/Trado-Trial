@@ -14,7 +14,7 @@ const Liveview : FC = () : JSX.Element => {
     let description : string = useSelector((state : RootState) => state.description)
     let url : string = useSelector((state : RootState) => state.url)
 
-    return (<div>
+    return (<div className = "live-view">
         <h1>{name}</h1> <br />
         <div>
             <p>{description}</p> <br />

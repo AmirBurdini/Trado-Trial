@@ -30,8 +30,29 @@
 
 .LinkButton {
 
+  background-color :#282c34;
+  color: white;
   margin-top: 5%;
-  
+  height: 80px;
+  width : 120px;
+}
+
+.text-input {
+  background-color :#282c34;
+  color: white;
+} 
+
+.button-input {
+  background-color :#282c34;
+  color: white;
+}
+
+.live-view {
+  padding-bottom: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color:#282c34;
+  color: white;
 }
 
 @keyframes App-logo-spin {
