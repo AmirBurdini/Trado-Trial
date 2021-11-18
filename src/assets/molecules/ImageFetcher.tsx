@@ -31,8 +31,10 @@ const ImageFetcher : FC = () : JSX.Element => {
             let all_images : [string] = ['']
             resp.data.hits.forEach((img : any) => {
 
-                all_images.push(img.pageURL)
+                all_images.push(img.userImageURL)
             })
+
+            all_images.splice(0,1)
 
             dispatch({type: `EDIT_IMAGES`, payload : all_images})
         }

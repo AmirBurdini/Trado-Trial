@@ -19,19 +19,19 @@ function App() {
       <Router>
         <div>
           <Link to = "/" >
-            <button onClick = {() => setPage('about')}> 
+            <button className = "LinkButton" onClick = {() => setPage('about')}> 
                 About Us
             </button> 
           </Link> 
 
           <Link to = "/images" >
-            <button onClick = {() => setPage('images')}> 
+            <button className = "LinkButton" onClick = {() => setPage('images')}> 
                 Images
             </button> 
           </Link> 
 
           <Link to = "/opening" >
-            <button onClick = {() => setPage('opening')}> 
+            <button className = "LinkButton" onClick = {() => setPage('opening')}> 
                 Opening Hours
             </button> 
           </Link> 
