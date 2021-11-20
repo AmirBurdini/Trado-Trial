@@ -1,17 +1,15 @@
 import React, { FC } from 'react'
-import {connect} from 'react-redux'
 
 interface Props {
     day : string;
-    start : string;
-    end : string;
+    time : {start : number, end : number}
 }
 
 const Time : FC<Props> = (props) : JSX.Element => {
 
     return (<div>
-        <h3>{props.day + " : " + props.start + " - " + props.end}</h3>
+        <h3>{props.day + " : " + props.time.start + ":00 - " + props.time.end + ":00"}</h3>
     </div>)
 }
 
-export default connect()(Time)
+export default (Time)

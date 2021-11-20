@@ -1,4 +1,12 @@
-const appReducer = (state = {page : '',name : '', description : '', url : '',search : '', images : [], opening : {},}, action : any) =>
+const appReducer = (state = {page : '',name : '', description : '', url : '',search : '', images : [], 
+opening : [{day : '1' ,start : 8, end : 17},
+           {day : '2' ,start : 8, end : 17},
+           {day : '3' ,start : 8, end : 17},
+           {day : '4' ,start : 8, end : 17},
+           {day : '5' ,start : 8, end : 17},
+           {day : '6' ,start : 8, end : 17},
+           {day : '7' ,start : 8, end : 17},],
+}, action : any) =>
 {
     switch(action.type)
     {
@@ -37,6 +45,15 @@ const appReducer = (state = {page : '',name : '', description : '', url : '',sea
             let new_images = action.payload;
 
             return {...state, images : new_images}
+
+        case('EDIT_HOURS') :
+
+            let new_hours = action.payload;
+            let edited_hours = state.opening
+
+            edited_hours[Number(new_hours.day) - 1] = new_hours;
+
+            return {...state, opening : edited_hours}
 
         default:
             return {...state};

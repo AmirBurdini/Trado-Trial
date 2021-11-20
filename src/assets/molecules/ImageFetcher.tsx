@@ -43,7 +43,7 @@ const ImageFetcher : FC = () : JSX.Element => {
 
     return (<div>
         <TextInput content = {''} name = {"SEARCH"}/> <br/> <hr />
-        <Button name='get images' fetch={getImages} />
+        <Button name='get images' function={getImages} />
     </div>)
 }
 

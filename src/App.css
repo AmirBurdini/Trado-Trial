@@ -55,6 +55,22 @@
   color: white;
 }
 
+.horizontal-slider {
+  color:#282c34;
+  margin-left: 35%;
+  margin-right: 25%;
+  width : 400px;
+}
+
+.timelist {
+  border : 1;
+  background-color :#282c34;
+  color : white;
+  margin-top : 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

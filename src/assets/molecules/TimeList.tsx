@@ -1,43 +1,43 @@
-import React, { FC, useState } from 'react'
-import {connect, useDispatch} from 'react-redux'
+import React, { FC, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import Time from '../atoms/Time'
 
+interface RootState {
+    opening : {day : string, start : number, end : number}[];
+}
+
 const TimeList : FC = () : JSX.Element => {
 
+    let hours : {day : string, start : number, end : number}[] = useSelector((state : RootState) => state.opening)
+    const [times, setTimes] = useState(hours)
+
     return (<div>
-        <table>
+        <table className = "timelist">
             <tr>
-                <Time day = "monday" start = "8:00" end = "17:00"/>
+                <Time day = "monday" time = {times[0]}/>
             </tr>
             <tr>
-                <Time day = "tuesday" start = "8:00" end = "17:00"/>
+                <Time day = "tuesday" time = {times[1]}/>
             </tr>
             <tr>
-                <Time day = "wednesday" start = "8:00" end = "17:00"/>
+                <Time day = "wednesday" time = {times[2]}/>
             </tr>
             <tr>
-                <Time day = "thursday" start = "8:00" end = "17:00"/>
+                <Time day = "thursday" time = {times[3]}/>
             </tr>
             <tr>
-                <Time day = "friday" start = "8:00" end = "17:00"/>
+                <Time day = "friday" time = {times[4]}/>
             </tr>
             <tr>
-                <Time day = "saturday" start = "8:00" end = "17:00"/>
+                <Time day = "saturday" time = {times[5]}/>
             </tr>
             <tr>
-                <Time day = "sunday" start = "8:00" end = "17:00"/>
+                <Time day = "sunday" time = {times[6]}/>
             </tr>
 
         </table>
-        
-        
-        
-        
-        
-        
-
     </div>)
 }
 
-export default connect()(TimeList)
+export default (TimeList)
