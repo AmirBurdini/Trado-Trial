@@ -6,6 +6,7 @@ opening : [{day : '1' ,start : 8, end : 17},
            {day : '5' ,start : 8, end : 17},
            {day : '6' ,start : 8, end : 17},
            {day : '7' ,start : 8, end : 17},],
+           colors : {primary : '#282c34', secondary : '#000000'}
 }, action : any) =>
 {
     switch(action.type)
@@ -54,6 +55,12 @@ opening : [{day : '1' ,start : 8, end : 17},
             edited_hours[Number(new_hours.day) - 1] = new_hours;
 
             return {...state, opening : edited_hours}
+
+        case('EDIT_COLORS') :
+
+            let new_colors = action.payload;
+
+            return {...state, colors : new_colors}
 
         default:
             return {...state};

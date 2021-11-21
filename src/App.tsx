@@ -3,6 +3,7 @@ import './App.css';
 
 import OpeningTimePage from './assets/pages/Opening';
 import ImagesPage from './assets/pages/Images';
+import FileUploader from './assets/pages/FileUploader';
 import AboutPage from './assets/pages/About';
 
 import {BrowserRouter as Router, Routes as Switch, Route, Link}  from 'react-router-dom'
@@ -34,12 +35,19 @@ function App() {
             <button className = "LinkButton" onClick = {() => setPage('opening')}> 
                 Opening Hours
             </button> 
+          </Link>
+
+          <Link to = "/colors" >
+            <button className = "LinkButton" onClick = {() => setPage('colors')}> 
+                Change Colors
+            </button> 
           </Link> 
         </div>
         
         <Switch>
             <Route path = "/opening" element = {<OpeningTimePage />} />
             <Route path = "/images"  element = {<ImagesPage />} />
+            <Route path = "/colors" element = {<FileUploader />} />
             <Route path = "/" element = {<AboutPage />} />
         </Switch>
 
